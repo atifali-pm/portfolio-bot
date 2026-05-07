@@ -18,10 +18,13 @@
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "cf-typegen": "wrangler types",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "ingest": "tsx scripts/ingest.ts",
+    "query": "tsx scripts/query.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.5",
+    "tsx": "^4.21.0",
     "typescript": "5.7.3",
     "wrangler": "4.84.1"
   }

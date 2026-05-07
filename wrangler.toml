@@ -17,5 +17,11 @@ index_name = "portfolio-bot"
 [observability]
 enabled = true
 
+# INGEST_SECRET protects /admin/ingest and /admin/query in Phase 1.
+# Production: managed via `wrangler secret put INGEST_SECRET` (already set).
+# Local dev: write to .dev.vars (gitignored).
+# Note: secret types are NOT declared in wrangler.toml, only their presence
+# in the runtime types is. Re-run `wrangler types` after adding new secrets.
+
 # Per-route CORS allowlist for the chat widget will be added in Phase 5
 # when the Worker is wired to atifali.pages.dev.
