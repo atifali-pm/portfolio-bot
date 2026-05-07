@@ -1,0 +1,21 @@
+name = "portfolio-bot"
+main = "src/index.ts"
+compatibility_date = "2025-05-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Workers AI binding (free tier covers Llama 3 + bge embeddings).
+[ai]
+binding = "AI"
+
+# Vectorize binding for retrieved-chunk index.
+# Index dimensions and metric must match the embedding model:
+# @cf/baai/bge-base-en-v1.5 emits 768-dim cosine vectors.
+[[vectorize]]
+binding = "VECTOR_INDEX"
+index_name = "portfolio-bot"
+
+[observability]
+enabled = true
+
+# Per-route CORS allowlist for the chat widget will be added in Phase 5
+# when the Worker is wired to atifali.pages.dev.
